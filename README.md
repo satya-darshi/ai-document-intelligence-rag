@@ -8,7 +8,7 @@ The AI inference layer uses Google's Gemini API for generation and embeddings, w
 
 The code uses:
 
-- **Gemini 2.5 Flash** — cloud LLM for grounded answers and agent/tool calling.
+- **Gemini 3.6 Flash** — cloud LLM for grounded answers and agent/tool calling.
 - **Gemini Embedding 2** — cloud embeddings for semantic retrieval, configured to 768 dimensions.
 - **Qdrant** — local vector database in Docker.
 - **PostgreSQL** — local application and conversation persistence.
@@ -18,7 +18,7 @@ The code uses:
 - **React + Vite** — frontend.
 - **Docker Compose** — local infrastructure.
 
-Gemini 2.5 Flash supports function calling and is a stable model. Gemini Embedding 2 supports 128–3072 dimensions, with 768 recommended as one of the standard reduced sizes.
+Gemini 3.6 Flash supports function calling and is a stable model. Gemini Embedding 2 supports 128–3072 dimensions, with 768 recommended as one of the standard reduced sizes.
 
 ### What runs on your PC vs. the cloud
 
@@ -41,7 +41,7 @@ Gemini 2.5 Flash supports function calling and is a stable model. Gemini Embeddi
         ┌───────────────────────┐
         │ Google Gemini API     │
         │                       │
-        │ Gemini 2.5 Flash      │
+        │ Gemini 3.6 Flash      │
         │ Gemini Embedding 2    │
         └───────────────────────┘
 ```
@@ -216,7 +216,7 @@ Vector + lexical reranking
 Top context chunks
       │
       ▼
-Gemini 2.5 Flash
+Gemini 3.6 Flash
       │
       ▼
 Grounded answer + citations
@@ -274,7 +274,7 @@ ai-document-intelligence-rag/
 │   │       ├── embeddings.py     # Gemini Embedding 2 adapter
 │   │       ├── ingestion.py      # parsing/chunking/indexing
 │   │       ├── retrieval.py      # vector retrieval + reranking
-│   │       ├── llm.py            # Gemini 2.5 Flash
+│   │       ├── llm.py            # Gemini 3.6 Flash
 │   │       └── chat.py           # chat orchestration/cache
 │   └── tests/
 ├── frontend/
@@ -305,7 +305,7 @@ ruff check .
 ## Official references
 
 - Google Gemini models: https://ai.google.dev/gemini-api/docs/models
-- Gemini 2.5 Flash: https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash
+- Gemini 3.6 Flash: https://ai.google.dev/gemini-api/docs/models/gemini-3.6-flash
 - Gemini embeddings: https://ai.google.dev/gemini-api/docs/embeddings
 - Qdrant local quickstart: https://qdrant.tech/documentation/quickstart/
 - LangChain Google GenAI integration: https://python.langchain.com/docs/integrations/chat/google_generative_ai/
